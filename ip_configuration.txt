@@ -1,0 +1,91 @@
+Also ip to change in:
+submit_report.php, 
+Page9Activity,
+ReportActivity
+
+
+remember to change port to 3306 as I am using 3307 (MySQL) (in submit_report,php)
+
+
+CREATE TABLE reports (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    reporter_id VARCHAR(255) NOT NULL,
+    reported_user_id VARCHAR(255) NOT NULL,
+    reason TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+ALTER TABLE reports 
+ADD COLUMN reporter_name VARCHAR(255) AFTER reporter_id,
+ADD COLUMN reported_user_name VARCHAR(255) AFTER reported_user_id;
+
+
+
+
+You need to update the IP address in 4 specific files.
+
+Since you are running two different servers (Node.js for notifications and XAMPP/PHP for the database/images), the format is slightly different for each.
+
+Here is exactly what you need to change:
+1. NotificationHelper.kt (For Push Notifications)
+
+    Server: Node.js
+
+    Port Needed? YES (:3000)
+
+    What to put:
+    Kotlin
+
+    // Usage: Sends push notifications
+    private const val BASE_URL = "http://YOUR_IP_ADDRESS:3000/"
+
+2. Page9Activity.kt (For Profile Picture Uploads)
+
+    Server: XAMPP (PHP)
+
+    Port Needed? NO (Defaults to 80)
+
+    What to put:
+    Kotlin
+
+    // Usage: Uploads images to your 'htdocs/movieapp' folder
+    private val BASE_URL = "http://YOUR_IP_ADDRESS/movieapp/"
+
+3. ReportActivity.kt (For Reporting Users)
+
+    Server: XAMPP (PHP)
+
+    Port Needed? NO
+
+    What to put:
+    Kotlin
+
+    // Usage: Sends report data to MySQL
+    private val BASE_URL = "http://YOUR_IP_ADDRESS/movieapp/"
+
+4. upload_image.php (The PHP Script itself)
+
+    Why? This script constructs the link that gets saved into Firebase. If you don't change this, the app will upload the image successfully, but it will save a broken link (like http://old_ip/...) to the database.
+
+    Port Needed? NO
+
+    What to put:
+    PHP
+
+    // Usage: Generates the link saved to Firestore
+    $server_ip = "YOUR_IP_ADDRESS"; 
+    $full_url = "http://" . $server_ip . "/movieapp/" . $target_file;
+
+Summary Checklist
+
+    [ ] NotificationHelper.kt: Add :3000
+
+    [ ] Page9Activity.kt: No Port, add /movieapp/
+
+    [ ] ReportActivity.kt: No Port, add /movieapp/
+
+    [ ] upload_image.php: No Port (Just the IP)
+
+	EditProfileActivity

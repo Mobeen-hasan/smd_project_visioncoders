@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background1"
+    tools:context=".FragmentMovieReviewsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_reviews"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back_arrow"
+            app:tint="@android:color/white"/>
+        <TextView
+            android:id="@+id/text_title_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="User Reviews"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_movie_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_reviews">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_poster"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avengers_poster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="The Dark Knight"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_poster"
+            app:layout_constraintTop_toTopOf="@id/image_poster" />
+        <TextView
+            android:id="@+id/text_movie_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="2008 • Action, Crime, Drama"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/text_movie_title"
+            app:layout_constraintStart_toStartOf="@id/text_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/text_movie_title" />
+        <TextView
+            android:id="@+id/text_rating_summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="4.8 (1,245 reviews)"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/text_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/text_movie_details" />
+
+        <LinearLayout
+            android:id="@+id/layout_filters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_poster">
+
+            <TextView
+                android:id="@+id/btnFilterAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Reviews"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:background="@drawable/bg_chip_selected"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"/>
+
+            <TextView
+                android:id="@+id/btnFilterFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="@color/textColorSecondary"
+                android:background="@drawable/bg_chip_unselected"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginStart="12dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_write_review"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_filters">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profile_pic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/profile"
+                app:civ_border_width="0dp"
+                app:civ_border_color="@android:color/transparent" />
+
+            <RatingBar
+                android:id="@+id/inputRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/image_profile_pic"
+                android:layout_marginBottom="4dp"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="0"
+                android:progressTint="@color/colorPrimary"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:isIndicator="false"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                android:transformPivotX="0dp"
+                android:transformPivotY="15dp" />
+            <ImageView
+                android:id="@+id/button_send_review"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:padding="4dp"
+                android:src="@drawable/send_icon"
+                app:tint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/edit_text_review"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/inputRatingBar"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/image_profile_pic"
+                android:layout_toStartOf="@id/button_send_review"
+                android:background="@drawable/bg_card"
+                android:hint="Write a review..."
+                android:inputType="textCapSentences|textMultiLine"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/textColorSecondary"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_reviews"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_movie_header"
+        tools:listitem="@layout/item_user_review" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

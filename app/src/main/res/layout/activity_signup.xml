@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background1"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Movie Tracker"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="Movie Tracker"
+            android:src="@drawable/app_logo" />
+
+        <TextView
+            android:id="@+id/subtitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Track, Rate &amp; Discover Movies"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_toggle_container"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/loginTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="Login"
+                android:textColor="@color/textColorSecondary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/signupTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_toggle_selected"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="Sign Up"
+                android:textColor="@color/textColorPrimary"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/name_icon"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/textColorHint"
+            android:hint="Full Name"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorHint" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/email_icon"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/textColorHint"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorHint" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/phone_icon"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/textColorHint"
+            android:hint="Phone Number (Optional)"
+            android:inputType="textPhonetic"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorHint" />
+
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/lock_icon"
+            android:drawableEnd="@drawable/visibility_icon"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/textColorHint"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorHint" />
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/lock_icon"
+            android:drawableEnd="@drawable/visibility_icon"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/textColorHint"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorHint" />
+
+        <CheckBox
+            android:id="@+id/rememberCheckBox"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_agree"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="12dp" />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="270dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="Creat Account"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="1dp" />
+
+            <View
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/termsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/terms_and_policy"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</ScrollView>

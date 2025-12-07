@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.App.FilterChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="chipBackgroundColor">@color/cardBackground</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+
+</resources>

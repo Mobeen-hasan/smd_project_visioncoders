@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background1">#1A2335</color>
+    <color name="textColorSecondary">#9CA3AF</color>
+    <color name="colorPrimary">#6366F1</color>
+    <color name="inputFieldBackground">#374151</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textYellow">#F59E0B</color>
+    <color name="textPurple2">#8B5CF6</color>
+    <color name="app_background_light">#2A2A3C</color>
+    <color name="button_destructive_red">#D93F3F</color>
+
+    <color name="colorPrimaryDark">#574EED</color>
+    <color name="colorAccent">#6C63FF</color>
+
+    <color name="darkBackground">#1F1D2B</color>
+    <color name="cardBackground">#252836</color>
+    <color name="dividerColor">#3E3E3E</color>
+
+    <color name="textColorHint">#676774</color>
+</resources>

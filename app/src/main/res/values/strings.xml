@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Movieapp</string>
+
+    <string name="terms_and_policy">By continuing, you agree to our <font color="#6C63FF">Terms of Service</font> and <font color="#6C63FF">Privacy Policy</font></string>
+    <string name="terms_agree">I agree to the <font color="#6C63FF">Terms of Service</font> and <font color="#6C63FF">Privacy Policy</font></string>
+</resources>

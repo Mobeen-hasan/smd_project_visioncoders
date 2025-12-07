@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:padding="12dp"
+    android:layout_marginBottom="12dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_profile_pic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/profile"
+        app:civ_border_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reviewAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/image_profile_pic"
+        app:layout_constraintTop_toTopOf="@id/image_profile_pic"
+        tools:text="Alex Chen" />
+
+    <RatingBar
+        android:id="@+id/reviewRating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:numStars="5"
+        android:progressTint="@color/colorPrimary"
+        android:progressBackgroundTint="@color/textColorHint"
+        android:rating="4.0"
+        app:layout_constraintStart_toEndOf="@id/image_profile_pic"
+        app:layout_constraintTop_toBottomOf="@id/reviewAuthor" />
+
+    <TextView
+        android:id="@+id/reviewContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/reviewAuthor"
+        app:layout_constraintTop_toBottomOf="@id/reviewRating"
+        tools:text="Absolutely phenomenal! Heath Ledger's Joker..." />
+
+    <ImageView
+        android:id="@+id/btnLike"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:src="@drawable/heart1"
+        app:tint="@color/textColorSecondary"
+        android:clickable="true"
+        android:focusable="false"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toStartOf="@id/reviewContent"
+        app:layout_constraintTop_toBottomOf="@id/reviewContent" />
+
+    <TextView
+        android:id="@+id/tvLikeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="12sp"
+        tools:text="124"
+        app:layout_constraintBottom_toBottomOf="@id/btnLike"
+        app:layout_constraintStart_toEndOf="@id/btnLike"
+        app:layout_constraintTop_toTopOf="@id/btnLike" />
+
+    <ImageView
+        android:id="@+id/btnComment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:src="@drawable/comment_icon"
+        app:tint="@color/textColorSecondary"
+        android:clickable="true"
+        android:focusable="false"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toEndOf="@id/tvLikeCount"
+        app:layout_constraintTop_toTopOf="@id/btnLike" />
+
+    <TextView
+        android:id="@+id/tvCommentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="12sp"
+        tools:text="23"
+        app:layout_constraintBottom_toBottomOf="@id/btnComment"
+        app:layout_constraintStart_toEndOf="@id/btnComment"
+        app:layout_constraintTop_toTopOf="@id/btnComment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
